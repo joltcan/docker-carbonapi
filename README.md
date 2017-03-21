@@ -17,7 +17,7 @@ I only need the binary, not all a proper dist, so I :
 
 In short:
 ```shell
-docker run -d --name carbonapi --env=CARBONZIPPER_HOST=10.0.3.1:8086 --env=GRAPHITE_HOST=10.0.3.1:2003 jolt/carbonapi
+docker run -d --name carbonapi --env=CARBONZIPPER_HOST=10.0.3.1:8086 --env=GRAPHITE_HOST=10.0.3.1:2003 -p 8186:8186 jolt/carbonapi
 ```
 
 ### Thanks to
