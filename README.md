@@ -11,13 +11,11 @@ I only need the binary, not all a proper dist, so I :
 ## How do I get it rolling?
 
 * docker pull jolt/carbonapi
-* set the CARBONZIPPER_HOST (and port).
-* set the GRAPHITE_HOST (and port) to send carbonapi-metrics to.
-* (optionally) set MEMCACHED:HOST (and port).
+* get the example conf and modify it to your liking
 
 In short:
 ```shell
-docker run -d --name carbonapi --env=CARBONZIPPER_HOST=10.0.3.1:8086 --env=GRAPHITE_HOST=10.0.3.1:2003 -p 8186:8186 jolt/carbonapi
+docker run -d --name carbonapi -v carbonapi.conf:/carbonapi.conf -p 8186:8186 jolt/carbonapi
 ```
 
 ### Thanks to
