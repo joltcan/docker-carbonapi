@@ -1,6 +1,8 @@
-FROM alpine:3.4
-MAINTAINER Fredrik Lundhag <f@mekk.com>
+FROM scratch
+LABEL maintainer="Fredrik Lundhag <f@mekk.com>"
+ADD files/passwd.minimal /etc/passwd
+ADD files/ /etc/carbonapi/
+USER carbon
+EXPOSE 8081
 ADD carbonapi /
-USER nobody
-EXPOSE 8080
-CMD ["sh", "-c", "/carbonapi -config /carbonapi.yml"]
+ENTRYPOINT ["./carbonapi", "-config", "/etc/carbonapi/carbonapi.yaml"]
